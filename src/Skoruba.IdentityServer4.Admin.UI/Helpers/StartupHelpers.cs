@@ -371,6 +371,7 @@ namespace Skoruba.IdentityServer4.Admin.UI.Helpers
                         options =>
                         {
                             options.Cookie.Name = adminConfiguration.IdentityAdminCookieName;
+                            options.SessionStore = new MemoryCacheTicketStore();
                         })
                     .AddOpenIdConnect(AuthenticationConsts.OidcAuthenticationScheme, options =>
                     {
